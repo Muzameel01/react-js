@@ -1,11 +1,3 @@
-const PI= Math.PI
-const E= Math.E
-const SQRT2 = Math.SQRT2
-
-console.log(PI);
-console.log(E);
-console.log(SQRT2);
-
 const number=[2,5,6,7];
 const [a,b,c,d]=number;
 console.log(c);
@@ -25,3 +17,12 @@ const {temp1, temp2, ...person}=obj1;
 console.log(temp1,temp2);
 console.log(person);
 
+const obj2={...obj1};
+
+obj2.colour="fair";
+
+console.log(obj1,obj2);
+
+const newarray=[...number];
+newarray.push(8);
+console.log(newarray);
