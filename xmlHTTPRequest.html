@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="avtar" src="" alt="">
+    <p id="demo"></p>
+<script>
+    // let request= new XMLHttpRequest(); 
+    // request.open("GET","https://api.github.com/users/muzameel01")
+    // request.send();
+    // request.onload=()=>{
+    //     console.log(request);
+    //     if (request.status===200){
+    //         const jsondata= JSON.parse(request.response)
+    //         console.log(jsondata);
+    //     document.getElementById("demo").innerHTML=`user name from server is  ${jsondata.name}`;
+    //     document.getElementById("avtar").src=jsondata.avatar_url
+
+    //  }
+    //  else{
+    //     document.getElementById("demo").innerHTML=`error occured with status${request.status}::${request.statusText}`;
+    //  } };
+    fetch("https://api.github.com/users/muzameel01").then((data)=>
+    {
+        console.log(data);
+        if (data.status===200)
+        data.json().then((jsondata)=>{
+            console.log(jsondata);
+            document.getElementById("demo").innerHTML=`user name from server is  ${jsondata.name}`;
+        document.getElementById("avtar").src=jsondata.avatar_url
+
+        })
+        else{
+            document.getElementById("demo").innerHTML=`error occured with status${request.status}::${request.statusText}`;
+        }
+    })
+</script>
+</body>
+</html>
